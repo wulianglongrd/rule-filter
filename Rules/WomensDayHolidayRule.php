@@ -22,6 +22,7 @@ class WomensDayHolidayRule extends Rule
 
     public function execute(Request $request, Response $response)
     {
+        echo "WomensDayHolidayRule start...\n";
         if(empty($response->getReasons())) {
             $response->setEnable(true);
         }

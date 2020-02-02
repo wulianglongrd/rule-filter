@@ -17,6 +17,8 @@ class AgeFilter extends Filter
 
     public function execute(Request $request, Response $response)
     {
+        echo "AgeFilter start...\n";
+
         $aUser = $request->getPayload();
         list($operator, $number) = $this->getFilterParam();
         if(! eval("return {$aUser['age']} {$operator} {$number}; ")) {
@@ -26,6 +28,7 @@ class AgeFilter extends Filter
             $response->addReason($oReason);
         }
 
+        echo "AgeFilter end...\n";
         $this->filter->execute($request, $response);
     }
 }

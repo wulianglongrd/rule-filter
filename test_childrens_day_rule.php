@@ -14,6 +14,7 @@ require_once './autoload.php';
 
 $oChildrensDayRule = new ChildrensDayRule();
 $aFilters = $oChildrensDayRule->getFilters();
+$aFilters = array_reverse($aFilters);
 
 echo "ChildrensDayRule filters: \n";
 print_r($aFilters);
@@ -37,6 +38,7 @@ $oResponse = new Response();
 $oRequest->setPayload($aUser);
 
 $oExecStack->execute($oRequest, $oResponse);
+echo "=========response=================\n";
 var_dump($oResponse);
 
 
@@ -53,4 +55,6 @@ $oResponse = new Response();
 $oRequest->setPayload($aUser);
 
 $oExecStack->execute($oRequest, $oResponse);
+
+echo "=========response=================\n";
 var_dump($oResponse);

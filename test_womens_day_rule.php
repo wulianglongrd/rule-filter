@@ -14,6 +14,7 @@ require_once './autoload.php';
 
 $oWomensDayHolidayRule = new WomensDayHolidayRule();
 $aFilters = $oWomensDayHolidayRule->getFilters();
+$aFilters = array_reverse($aFilters);
 
 echo "WomensDayHolidayRule filters: \n";
 print_r($aFilters);
@@ -37,11 +38,11 @@ $oResponse = new Response();
 $oRequest->setPayload($aUser);
 
 $oExecStack->execute($oRequest, $oResponse);
+echo "=========response=================\n";
 var_dump($oResponse);
 
 
 echo "==========================\n";
-
 echo "Lucy can celebrate women's Day: \n";
 $aUser = [
     'name' => 'Jone',
@@ -53,4 +54,6 @@ $oResponse = new Response();
 $oRequest->setPayload($aUser);
 
 $oExecStack->execute($oRequest, $oResponse);
+
+echo "=========response=================\n";
 var_dump($oResponse);

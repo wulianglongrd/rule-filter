@@ -17,6 +17,8 @@ class GenderFilter extends Filter
 
     public function execute(Request $request, Response $response)
     {
+        echo "GenderFilter start...\n";
+
         $aUser = $request->getPayload();
         $sGender = $this->getFilterParam();
         if($aUser['gender'] != $sGender) {
@@ -26,6 +28,7 @@ class GenderFilter extends Filter
             $response->addReason($oReason);
         }
 
+        echo "GenderFilter end...\n";
         $this->filter->execute($request, $response);
     }
 }
