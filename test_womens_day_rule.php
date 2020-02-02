@@ -45,7 +45,7 @@ var_dump($oResponse);
 echo "==========================\n";
 echo "Lucy can celebrate women's Day: \n";
 $aUser = [
-    'name' => 'Jone',
+    'name' => 'Lucy',
     'age' => 19,
     'gender' => 'female',
 ];

@@ -46,7 +46,7 @@ echo "==========================\n";
 
 echo "Lucy can't celebrate children's Day: \n";
 $aUser = [
-    'name' => 'Jone',
+    'name' => 'Lucy',
     'age' => 19,
     'gender' => 'female',
 ];
